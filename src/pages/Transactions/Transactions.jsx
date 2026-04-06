@@ -252,7 +252,22 @@ const Transactions = () => {
         />
       </div>
 
-      <Dialog open={open} onClose={handleClose} PaperProps={{ style: { backgroundColor: 'var(--card-color)', color: 'var(--text-main)', minWidth: '400px', zIndex: 10000 } }}>
+      <Dialog 
+        open={open} 
+        onClose={handleClose} 
+        fullWidth
+        maxWidth="xs"
+        PaperProps={{ 
+          style: { 
+            backgroundColor: 'var(--card-color)', 
+            color: 'var(--text-main)', 
+            zIndex: 10000,
+            margin: '16px',
+            width: 'calc(100% - 32px)',
+            maxWidth: '450px'
+          } 
+        }}
+      >
         <DialogTitle>{form.id ? 'Edit Transaction' : 'New Transaction'}</DialogTitle>
         <DialogContent style={{ display: 'flex', flexDirection: 'column', gap: '16px', paddingTop: '16px' }}>
           <TextField type="date" label="Date" InputLabelProps={{ shrink: true }} size="small" value={form.date} onChange={e => setForm({ ...form, date: e.target.value })} />

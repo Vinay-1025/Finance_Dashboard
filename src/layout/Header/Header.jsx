@@ -52,8 +52,9 @@ const Header = ({ toggleSidebar }) => {
       <div className="header-right">
         {currentRole === "Admin" && (
           <Button variant="contained" startIcon={<MdAdd />} onClick={handleOpen}
-            style={{ backgroundColor: 'var(--primary)', color: '#fff', textTransform: 'none', fontWeight: 600, marginRight: '16px', fontSize: '12px' }}>
-            Add Transaction
+            className="add-tx-btn"
+            style={{ backgroundColor: 'var(--primary)', color: '#fff', textTransform: 'none', fontWeight: 600, fontSize: '12px' }}>
+            <span className="btn-text">Add Transaction</span>
           </Button>
         )}
 
@@ -70,7 +71,21 @@ const Header = ({ toggleSidebar }) => {
         <Avatar className="avatar" alt="User Avatar" src="https://i.pravatar.cc/150?img=68" />
       </div>
 
-      <Dialog open={open} onClose={() => setOpen(false)} PaperProps={{ style: { backgroundColor: 'var(--card-color)', color: 'var(--text-main)', minWidth: '400px' } }}>
+      <Dialog 
+        open={open} 
+        onClose={() => setOpen(false)} 
+        fullWidth
+        maxWidth="xs"
+        PaperProps={{ 
+          style: { 
+            backgroundColor: 'var(--card-color)', 
+            color: 'var(--text-main)',
+            margin: '16px',
+            width: 'calc(100% - 32px)',
+            maxWidth: '450px'
+          } 
+        }}
+      >
         <DialogTitle>New Global Transaction</DialogTitle>
         <DialogContent style={{ display: 'flex', flexDirection: 'column', gap: '16px', paddingTop: '16px' }}>
           <TextField type="date" label="Date" InputLabelProps={{ shrink: true }} size="small" value={form.date} onChange={e => setForm({ ...form, date: e.target.value })} />

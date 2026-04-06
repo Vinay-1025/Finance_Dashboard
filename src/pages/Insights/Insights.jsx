@@ -26,9 +26,9 @@ const InsightsPage = () => {
   }, [data]);
 
   return (
-    <div style={{ padding: '0 24px', paddingBottom: '40px' }}>
-      <h2 style={{ color: 'var(--text-main)', marginBottom: '8px' }}>Advanced Insights Engine</h2>
-      <p style={{ color: 'var(--text-muted)', marginBottom: '24px' }}>Algorithmically mapping complex mathematical observations from your historical data.</p>
+    <div className="insights-container" style={{ padding: '0 16px', paddingBottom: '40px' }}>
+      <h2 style={{ color: 'var(--text-main)', marginBottom: '8px', fontSize: '1.5rem' }}>Advanced Insights Engine</h2>
+      <p style={{ color: 'var(--text-muted)', marginBottom: '24px', fontSize: '0.9rem' }}>Algorithmically mapping complex mathematical observations from your historical data.</p>
       
       {status === "loading" && <div style={{ padding: '40px', display: 'flex', justifyContent: 'center' }}><CircularProgress style={{ color: 'var(--primary)' }}/></div>}
       
@@ -38,9 +38,9 @@ const InsightsPage = () => {
             <>
               <TopInsights transactions={data} />
               
-              <div className="card" style={{ padding: '24px' }}>
+              <div className="card" style={{ padding: '20px' }}>
                 <h3 style={{ margin: '0 0 20px 0', color: 'var(--primary)', fontSize: '1.1rem', fontWeight: 700 }}>Category Breakdown</h3>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: '20px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))', gap: '16px' }}>
                    {Object.entries(categorySummary).map(([cat, vals]) => (
                       <div key={cat} style={{ backgroundColor: 'var(--bg-color)', padding: '16px', borderRadius: '12px', border: '1px solid var(--card-border)', transition: 'transform 0.2s ease' }} className="category-item-hover">
                          <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase', marginBottom: '8px' }}>{cat}</div>
@@ -55,7 +55,7 @@ const InsightsPage = () => {
                 </div>
               </div>
               
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(500px, 1fr))', gap: '24px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
                  <MonthlyComparisonChart transactions={data} />
                  <SmartObservations transactions={data} />
               </div>

@@ -113,3 +113,47 @@
 .avatar:hover {
   transform: scale(1.05);
 }
+
+@media (max-width: 600px) {
+  .header-right {
+    gap: 8px;
+  }
+  
+  .role-select {
+    display: none;
+  }
+
+  .btn-text {
+    display: none;
+  }
+
+  .add-tx-btn {
+    min-width: unset !important;
+    padding: 8px !important;
+    margin: 0 !important;
+  }
+
+  .add-tx-btn .MuiButton-startIcon {
+    margin: 0 !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .header {
+    padding: 0 8px;
+  }
+
+  .header-left {
+    gap: 8px;
+  }
+  
+  .avatar {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .theme-btn {
+    width: 36px;
+    height: 36px;
+  }
+}

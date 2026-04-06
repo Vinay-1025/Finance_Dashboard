@@ -16,6 +16,13 @@ const Sidebar = ({ isOpen, setIsSidebarOpen }) => {
 
   const handleToggle = () => setIsSidebarOpen(!isOpen);
 
+  const handleNav = (path) => {
+    navigate(path);
+    if (window.innerWidth <= 768) {
+      setIsSidebarOpen(false);
+    }
+  };
+
   return (
     <div className={`sidebar ${isOpen ? "open" : "collapsed"}`}>
       <div className="sidebar-top">
@@ -28,22 +35,22 @@ const Sidebar = ({ isOpen, setIsSidebarOpen }) => {
             alt="Zorvyn Logo" 
             className={`sidebar-logo ${!isOpen ? "collapsed-logo" : ""}`}
             style={{ cursor: "pointer" }}
-            onClick={() => navigate("/")}
+            onClick={() => handleNav("/")}
           />
         </div>
 
         <ul className="menu">
-          <li className={location.pathname === "/" ? "active" : ""} onClick={() => navigate("/")}>
+          <li className={location.pathname === "/" ? "active" : ""} onClick={() => handleNav("/")}>
             <FaHome />
             {isOpen && <span>Dashboard</span>}
           </li>
 
-          <li className={location.pathname === "/transactions" ? "active" : ""} onClick={() => navigate("/transactions")}>
+          <li className={location.pathname === "/transactions" ? "active" : ""} onClick={() => handleNav("/transactions")}>
             <FaExchangeAlt />
             {isOpen && <span>Transactions</span>}
           </li>
 
-          <li className={location.pathname === "/insights" ? "active" : ""} onClick={() => navigate("/insights")}>
+          <li className={location.pathname === "/insights" ? "active" : ""} onClick={() => handleNav("/insights")}>
             <FaChartPie />
             {isOpen && <span>Insights</span>}
           </li>
