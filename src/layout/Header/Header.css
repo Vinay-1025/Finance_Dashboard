@@ -1,0 +1,115 @@
+.header {
+  height: 72px;
+  background: var(--header-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  border-bottom: 1px solid var(--card-border);
+  box-shadow: var(--shadow-sm);
+  z-index: 5;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.menu-btn {
+  font-size: 24px;
+  border: none;
+  background: none;
+  color: var(--text-main);
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.menu-btn:hover {
+  background: var(--hover-bg);
+}
+
+.header-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .header-title {
+    display: none;
+  }
+
+  .header {
+    padding: 0 16px;
+  }
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.theme-btn {
+  border: 1px solid var(--card-border);
+  background: var(--card-color);
+  color: var(--text-main);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+  width: 42px;
+  height: 42px;
+}
+
+.theme-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  color: var(--primary);
+}
+
+.theme-btn svg {
+  font-size: 22px;
+}
+
+.role-select {
+  padding: 8px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  background: var(--card-color);
+  color: var(--text-main);
+  font-family: inherit;
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.role-select:hover {
+  border-color: var(--primary-hover);
+}
+
+.avatar {
+  box-shadow: var(--shadow-sm);
+  border: 2px solid var(--card-border);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.avatar:hover {
+  transform: scale(1.05);
+}

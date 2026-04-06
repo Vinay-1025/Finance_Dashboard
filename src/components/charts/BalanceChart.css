@@ -1,0 +1,39 @@
+.chart-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chart-header h4 {
+  margin: 0;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.chart-select {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
+  background: var(--card-color);
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chart-select:hover {
+  border-color: var(--primary);
+}
+
+.chart-select:focus {
+  box-shadow: 0 0 0 2px rgba(123, 70, 188, 0.2);
+}
