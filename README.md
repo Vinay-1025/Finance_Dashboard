@@ -47,9 +47,9 @@ _Category Tools_
   - Frontend React 18 (Vite)
   - State Management Redux Toolkit
   - Charts ApexCharts
-  -> UI Material UI + CSS
-  -> Icons React Icons
-  -> Backend json-server
+  -  UI Material UI + CSS
+  - Icons React Icons
+  - Backend json-server
 
 **Setup Instructions**
   - Install dependencies: npm install
